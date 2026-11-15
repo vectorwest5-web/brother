@@ -1,0 +1,104 @@
+/* ===== per-theme page scenes (#sceneBg) ===== */
+#sceneBg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#07060d}
+.scn{position:absolute;inset:0;width:100%;height:100%;display:none;opacity:0;transition:opacity 1.2s ease}
+.scn.on{display:block}.scn.in{opacity:1}
+.scn:not(.in) *{animation-play-state:paused!important}
+.scn .st{animation:twinkle 4s ease-in-out infinite}@keyframes twinkle{50%{opacity:.25}}
+.scn .rip{animation:ripple 5s ease-in-out infinite;transform-origin:1190px 830px}@keyframes ripple{50%{transform:scaleX(1.14);opacity:.6}}
+.scn .mist{animation:drift 26s ease-in-out infinite alternate}@keyframes drift{to{transform:translateX(-120px)}}
+.scn .cor{animation:corona 6s ease-in-out infinite;transform-origin:800px 260px}@keyframes corona{50%{transform:scale(1.06);opacity:.85}}
+.scn .haze{animation:hazeP 5s ease-in-out infinite}@keyframes hazeP{50%{opacity:.22}}
+.scn .win{animation:winFlick 3.2s infinite}@keyframes winFlick{0%,100%{opacity:1}46%{opacity:.85}50%{opacity:.2}54%{opacity:.95}}
+.scn .rays{animation:raysR 40s linear infinite alternate}@keyframes raysR{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.scn .bk{animation:bokeh 8s ease-in-out infinite}@keyframes bokeh{50%{opacity:.02;transform:translateY(-26px)}}
+.scn .au{animation:aurora 18s ease-in-out infinite alternate}.scn .au.a2{animation-duration:24s;animation-direction:alternate-reverse}@keyframes aurora{from{transform:translateX(-90px) skewX(-4deg);opacity:.55}to{transform:translateX(90px) skewX(4deg);opacity:1}}
+.scn .lit{animation:litF 4s ease-in-out infinite}@keyframes litF{50%{opacity:.78}}
+.scn .smk{animation:smoke 5s ease-out infinite}.scn .smk.s2{animation-delay:2.5s}@keyframes smoke{0%{transform:translate(0,0) scale(1);opacity:.45}100%{transform:translate(26px,-90px) scale(3.4);opacity:0}}
+.scn .bulb{animation:bulbT 2.4s ease-in-out infinite}@keyframes bulbT{50%{opacity:.35}}.scn .star{animation:starP 2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}@keyframes starP{50%{transform:scale(1.25);filter:brightness(1.5)}}
+#app{position:relative;z-index:1}
+/* translucent sections so the theme scene shows through */
+body[class*="theme-"]{--scn:7,6,13}
+body.theme-aizen{--scn:8,6,20}body.theme-madara{--scn:14,3,6}body.theme-halloween{--scn:12,5,20}body.theme-gold{--scn:12,10,6}body.theme-winter{--scn:5,12,26}
+body[class*="theme-"] #app section,body[class*="theme-"] #app footer{background-color:rgba(var(--scn),.74)}
+body[class*="theme-"] #app .section.dark,body[class*="theme-"] #app .dark{background-color:rgba(var(--scn),.86)}
+body[class*="theme-"] #app .hero{background:transparent!important;background-image:none!important}
+body[class*="theme-"] .nav{background:rgba(var(--scn),.9)!important}
+
+/* ===== winter theme ===== */
+body.theme-winter{--accent:#7fd4ff;--accent2:#2b6cb0;--gold:#bfe3ff;--gold2:#5d8fc4;background:#050b18}
+#snowCv{position:fixed;inset:0;width:100%;height:100%;z-index:11;pointer-events:none;display:none}
+body.theme-winter .hero h1{background:linear-gradient(180deg,#fff,#cfe8ff 55%,#7fb9ec);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px #7fd4ff66)}
+body.theme-winter .section-head h2 em,body.theme-winter .center-head h2 em{color:#9ed8ff;text-shadow:0 0 22px #7fd4ff88}
+body.theme-winter .hero-orb{border-color:#9ed8ff44;box-shadow:0 0 110px #7fd4ff22}
+body.theme-winter .legend,body.theme-winter .duel-card,body.theme-winter .photo-card,body.theme-winter .interest-card,body.theme-winter .letter-card,body.theme-winter .game-stage{border-color:#9ed8ff44;box-shadow:inset 0 0 40px #7fd4ff0d}
+body.theme-winter .timeline-item:before{background:#9ed8ff;box-shadow:0 0 0 5px #9ed8ff22}
+/* snowman */
+#snowman{position:fixed;right:clamp(8px,2.5vw,48px);bottom:-14px;z-index:10;display:none;width:clamp(130px,14.5vw,200px);pointer-events:none}
+body.theme-winter #snowman{display:block}
+.sm-wrap{position:relative;pointer-events:auto;cursor:pointer;transform-origin:50% 100%;animation:smSway 6s ease-in-out infinite}
+.sm-body{display:block;width:100%;height:auto}.sm-face{position:absolute;inset:0;width:100%;height:100%}
+@keyframes smSway{50%{transform:rotate(1.2deg)}}
+.sm-wrap .eye{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}@keyframes blink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.sm-wrap .scarf-tail{transform-origin:150px 140px;animation:tailW 3.4s ease-in-out infinite alternate}@keyframes tailW{from{transform:rotate(-3deg)}to{transform:rotate(7deg)}}
+.sm-wrap .arm-r{transform-origin:164px 160px;animation:wave 4s ease-in-out infinite}@keyframes wave{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-14deg)}80%{transform:rotate(4deg)}90%{transform:rotate(-12deg)}}
+#snowman.hop .sm-wrap{animation:smHop .7s ease-out,smSway 6s ease-in-out .7s infinite}@keyframes smHop{30%{transform:translateY(-22px) rotate(-3deg)}60%{transform:translateY(0) rotate(2deg)}80%{transform:translateY(-6px)}}
+@media(max-width:800px){#snowman{width:120px;right:4px}}
+/* christmas lights */
+#xmasLights{position:fixed;left:0;right:0;top:74px;height:96px;z-index:44;pointer-events:none;display:none}
+body.theme-winter #xmasLights{display:block}
+#xmasLights .bulb{animation:bulbT 1.8s ease-in-out infinite}
+/* snow caps on buttons / candy-cane primaries */
+body.theme-winter .gold-button,body.theme-winter .g-btn,body.theme-winter .vote-btn,body.theme-winter .game-tab,body.theme-winter .duo,body.theme-winter .vault-tabs button,body.theme-winter .chip,body.theme-winter .pn,body.theme-winter .theme-card{position:relative;overflow:visible}
+body.theme-winter .gold-button:before,body.theme-winter .g-btn:before,body.theme-winter .vote-btn:before,body.theme-winter .game-tab:before,body.theme-winter .duo:before,body.theme-winter .vault-tabs button:before,body.theme-winter .pn:before,body.theme-winter .bro-btn:before,body.theme-winter #loginBtn:before{content:'';position:absolute;left:-2px;right:-2px;top:-19px;height:26px;pointer-events:none;background:var(--cap,none) 0 0/100% 100% no-repeat;filter:drop-shadow(0 2px 2px #0006);transition:transform .3s}
+body.theme-winter .gold-button:hover:before,body.theme-winter .g-btn:hover:before,body.theme-winter .bro-btn:hover:before{transform:translateY(-2px)}
+body.theme-winter .bro-btn,body.theme-winter #loginBtn{position:relative}
+body.theme-winter .gold-button,body.theme-winter .g-btn:not(.alt),body.theme-winter #loginBtn{background:repeating-linear-gradient(-45deg,#ffffff1c 0 9px,transparent 9px 18px),linear-gradient(110deg,#d62839,#8f1220)!important;color:#fff!important;border:1px solid #ffffff55!important;text-shadow:0 1px 2px #0008}
+body.theme-winter .g-btn.alt{background:repeating-linear-gradient(-45deg,#ffffff14 0 9px,transparent 9px 18px),linear-gradient(110deg,#17753f,#0b4a28)!important;color:#fff!important;border:1px solid #ffffff44!important}
+body.theme-winter .game-tab.on,body.theme-winter .vault-tabs button.on{background:linear-gradient(110deg,#d62839,#8f1220)!important;border-color:#fff8!important;color:#fff!important;box-shadow:0 0 22px #d6283955}
+body.theme-winter .game-tab b:after{content:'';}
+body.theme-winter .gold-button:hover,body.theme-winter .g-btn:hover{box-shadow:0 8px 30px #d6283966,0 0 0 2px #ffffff33}
+/* frosty game stages with icicles */
+body.theme-winter .game-stage,body.theme-winter .duel-card,body.theme-winter .legend{position:relative;border-top-color:#dff2ff!important}
+body.theme-winter .game-stage:before,body.theme-winter .duel-card:before,body.theme-winter .legend:after{content:'';position:absolute;left:0;right:0;top:0;height:16px;pointer-events:none;z-index:5;background:linear-gradient(135deg,#e8f6ff 25%,transparent 25%) 0 0/20px 16px,linear-gradient(225deg,#e8f6ff 25%,transparent 25%) 0 0/20px 16px;opacity:.9;filter:drop-shadow(0 0 5px #9ed8ff)}
+body.theme-winter .section-head h2:before{content:'❄ ';color:#cfeaff;font-size:.6em;vertical-align:middle;text-shadow:0 0 12px #7fd4ff}
+body.theme-winter .g-head h3:after{content:' ❄';color:#9ed8ff;font-size:.7em}
+body.theme-winter .arena,body.theme-winter .cv{border-color:#9ed8ff66!important}
+body.theme-winter .tgt{filter:drop-shadow(0 0 8px #9ed8ff)}
+body.theme-winter .q-opt:hover:not(:disabled){border-color:#9ed8ff}
+body.theme-winter .vc{border-radius:14px}
+/* winter HUD */
+body.theme-winter .hud{border-color:#9ed8ff66!important;box-shadow:0 0 24px #7fd4ff22}
+body.theme-winter .hud-lv{clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);background:linear-gradient(135deg,#17753f,#0b4a28 55%,#d62839);color:#fff!important;min-width:40px;height:34px}
+body.theme-winter .hud-bar{border-radius:8px;background:#0a1730!important;border-color:#9ed8ff66!important}
+body.theme-winter .hud-bar i{border-radius:8px;background:repeating-linear-gradient(-45deg,#e63946 0 8px,#fff 8px 16px)!important;background-size:23px 100%;animation:candy 1s linear infinite;box-shadow:0 0 12px #e63946aa}
+body.theme-winter .hud-bar i:after{content:'🎄'}
+body.theme-winter .xp-pop{color:#cfeaff;text-shadow:0 0 10px #7fd4ff}
+body.theme-winter .cd-over b{color:#e8f6ff;text-shadow:0 0 40px #7fd4ff}
+/* scene tuning for hero readability */
+body.theme-winter .hero:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,#05122a99,transparent 60%);pointer-events:none}
+
+/* keep hero buttons above the snowman */
+body.theme-winter .hero-duo,body.theme-winter .hero-cta{position:relative;z-index:12}
+
+/* ===== christmas decoration pack ===== */
+#xmasGifts{position:fixed;right:clamp(150px,21vw,300px);bottom:-6px;width:clamp(120px,14vw,200px);z-index:10;display:none;pointer-events:none;filter:drop-shadow(0 6px 8px #0007)}
+body.theme-winter #xmasGifts{display:block}
+#sleigh{position:fixed;left:0;top:140px;width:min(46vw,420px);z-index:13;pointer-events:none;display:none;transform:translateX(-120%)}
+body.theme-winter #sleigh{display:block}
+#sleigh svg{width:100%;display:block;filter:drop-shadow(0 0 10px #ffe9a888)}
+#sleigh .trail{position:absolute;right:92%;top:46%;width:60%;height:10px;background:linear-gradient(90deg,transparent,#ffe9a866 60%,#fff);filter:blur(3px);border-radius:10px}
+#sleigh.fly{animation:sleighFly 13s linear forwards}
+@keyframes sleighFly{0%{transform:translate(-120%,30px) rotate(-3deg)}50%{transform:translate(70vw,-20px) rotate(2deg)}100%{transform:translate(135vw,20px) rotate(-3deg)}}
+@media(max-width:800px){#xmasGifts{display:none!important}}
+/* cards: ribbon, bow and holly */
+body.theme-winter .game-stage,body.theme-winter .duel-card,body.theme-winter .bro-card,body.theme-winter .vc,body.theme-winter .legend{position:relative}
+body.theme-winter .bro-card:before,body.theme-winter .duel-stage:before{content:'';position:absolute;left:0;right:0;top:0;height:14px;z-index:6;pointer-events:none;background:linear-gradient(135deg,#e8f6ff 25%,transparent 25%) 0 0/18px 14px,linear-gradient(225deg,#e8f6ff 25%,transparent 25%) 0 0/18px 14px;opacity:.9}
+body.theme-winter .duel-stage{position:relative}
+body.theme-winter .game-stage:after,body.theme-winter .bro-card:after,body.theme-winter .duel-stage:after{content:'';position:absolute;right:-6px;bottom:-4px;width:78px;height:58px;z-index:7;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Cpath d='M32 26C24 8 6 10 4 14c4 8 14 14 28 12z' fill='%231d7a46' stroke='%230b4a28'/%3E%3Cpath d='M32 26C40 8 58 10 60 14c-4 8-14 14-28 12z' fill='%23269a5a' stroke='%230b4a28'/%3E%3Cpath d='M32 26C20 34 14 44 22 46c8-2 12-10 10-20zM32 26c12 8 18 18 10 20-8-2-12-10-10-20z' fill='%231d7a46' stroke='%230b4a28'/%3E%3Ccircle cx='28' cy='28' r='6' fill='%23e0243a'/%3E%3Ccircle cx='38' cy='30' r='6' fill='%23c01a2e'/%3E%3Ccircle cx='33' cy='23' r='6' fill='%23ff3b53'/%3E%3Ccircle cx='31' cy='21' r='1.8' fill='%23fff' opacity='.7'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 3px 4px #0008)}
+body.theme-winter .bro-card.shaped:after{display:none}
+body.theme-winter .section-head{position:relative}
+body.theme-winter .section-head h2:after{content:'';display:block;height:6px;width:min(260px,60%);margin:12px auto 0;border-radius:6px;background:repeating-linear-gradient(-45deg,#d62839 0 9px,#fff 9px 18px);box-shadow:0 0 14px #d6283966}
+body.theme-winter .hero-title,body.theme-winter #heroTitle{text-shadow:0 0 30px #d6283977,0 0 60px #17753f66}
+body.theme-winter #app footer{border-top:6px solid transparent;border-image:repeating-linear-gradient(-45deg,#d62839 0 12px,#fff 12px 24px,#17753f 24px 36px,#fff 36px 48px) 6}
+body.theme-winter ::selection{background:#d62839;color:#fff}
+@media(prefers-reduced-motion:reduce){#sleigh{display:none!important}}

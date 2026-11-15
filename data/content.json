@@ -1,0 +1,112 @@
+{
+  "site": {
+    "title": "برای ایزن",
+    "subtitle": "خاطره موندگار",
+    "intro": "بعضی لحظه‌ها ارزش این را دارند که برای همیشه نگه‌شان داریم.اینجا گوشه‌ای از همان لحظه‌هاست",
+    "footer": "ساخته شده برای برادرم"
+  },
+  "sections": {
+    "about": {
+      "title": "درباره تو",
+      "text": "چیزهایی که می‌خواهم همیشه درباره‌ات به یاد داشته باشم."
+    },
+    "memories": {
+      "title": "خاطره‌هایی که می‌مانند",
+      "items": [
+        {
+          "date": "یک روز خاص",
+          "title": "روزی که شمارتو پای تابلو نوشتی رو یادته؟",
+          "text": ""
+        }
+      ]
+    },
+    "interests": {
+      "title": "دنیای موردعلاقه‌ات",
+      "items": [
+        {
+          "title": "موسیقی",
+          "text": "معمولا فانک و گاهی ارامش بخش"
+        },
+        {
+          "title": "انیمه",
+          "text": "بلیچ و ری زیرو"
+        },
+        {
+          "title": "فیلم",
+          "text": "هانیبال لکتر"
+        },
+        {
+          "title": "شخصیت مورد علاقه",
+          "text": "ایزن ساما اکیدونا و الوکارد"
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "date": "اولین روز",
+        "text": "پسر اون روز قابل فراموش شدن نیست که باهم اشنا شدیم شاید یکی از بدترین یا بهترین اشناییا بود هنوزم از نظرم بامزه و خنده داره"
+      },
+      {
+        "date": "امروز",
+        "text": "داستان هنوز ادامه داره"
+      }
+    ],
+    "letter": {
+      "title": "چند کلمه از طرف من",
+      "text": "ما خیلی ساله باهم رفیقیم و شاید بهتره بگم برادریم درحالی که مناز همه زده شدم تو برادر ثابت کردی که همه مثل هم نیستن ازت ممنونم"
+    },
+    "surprise": {
+      "title": "سوپرایز بچ",
+      "text": "اینجا هیچی جز یه یادآوری نیست زنگ بزن بریم گیم دیگه"
+    }
+  },
+  "photos": [
+    {
+      "file": "assets/photos/d03f4e095d_9c0de643fe_RobloxScreenShot20261008_024106293.png",
+      "title": "9c0de643fe_RobloxScreenShot20261008_024106293.png",
+      "text": ""
+    },
+    {
+      "file": "assets/photos/e29293fe2f_57f6fc7d32_RobloxScreenShot20261107_152014177.png",
+      "title": "57f6fc7d32_RobloxScreenShot20261107_152014177.png",
+      "text": ""
+    },
+    {
+      "file": "assets/photos/fc4665444a_RobloxScreenShot20261107_161037154.png",
+      "title": "RobloxScreenShot20261107_161037154.png",
+      "text": ""
+    },
+    {
+      "file": "assets/photos/8ce6d01b9f_RobloxScreenShot20261107_171157385.png",
+      "title": "RobloxScreenShot20261107_171157385.png",
+      "text": ""
+    },
+    {
+      "file": "assets/photos/1e07a32f60_RobloxScreenShot20261109_014602445.png",
+      "title": "RobloxScreenShot20261109_014602445.png",
+      "text": ""
+    },
+    {
+      "file": "assets/photos/b9d38d0f0f_RobloxScreenShot20261113_040115060.png",
+      "title": "RobloxScreenShot20261113_040115060.png",
+      "text": ""
+    },
+    {
+      "file": "assets/photos/7fb0cce6c7_RobloxScreenShot20261113_052829750.png",
+      "title": "RobloxScreenShot20261113_052829750.png",
+      "text": ""
+    },
+    {
+      "file": "assets/photos/fa317ff3e3_RobloxScreenShot20261113_104926999.png",
+      "title": "RobloxScreenShot20261113_104926999.png",
+      "text": ""
+    },
+    {
+      "file": "assets/photos/78011a0849_Screenshot_(156).png",
+      "title": "Screenshot (156).png",
+      "text": ""
+    }
+  ],
+  "videos": [],
+  "music": []
+}
